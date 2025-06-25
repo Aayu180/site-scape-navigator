@@ -1,11 +1,132 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { GraduationCap, Users, Calendar, Phone, ChevronRight } from "lucide-react";
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
+      <div className="container mx-auto px-4 py-12 max-w-6xl">
+        {/* Hero Section */}
+        <div className="text-center mb-12">
+          <h1 className="text-5xl font-bold text-gray-900 mb-6">
+            Welcome to Our University
+          </h1>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+            Discover excellence in education, research, and innovation. Navigate through our comprehensive website to explore all that we offer.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link to="/sitemap">
+              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
+                Explore Sitemap
+                <ChevronRight className="ml-2 w-5 h-5" />
+              </Button>
+            </Link>
+            <Link to="/contact">
+              <Button variant="outline" size="lg" className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-3 rounded-lg transition-all duration-300">
+                Contact Us
+              </Button>
+            </Link>
+          </div>
+        </div>
+
+        {/* Quick Navigation Cards */}
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 mb-12">
+          <Card className="group hover:shadow-xl transition-all duration-300 border-0 shadow-lg bg-white/80 backdrop-blur-sm hover:bg-white/95">
+            <CardHeader className="text-center pb-2">
+              <div className="mx-auto w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4 group-hover:bg-blue-200 transition-colors">
+                <GraduationCap className="w-6 h-6 text-blue-600" />
+              </div>
+              <CardTitle className="text-lg">Academics</CardTitle>
+            </CardHeader>
+            <CardContent className="text-center">
+              <CardDescription className="mb-4">
+                Explore our academic programs, faculty, and research opportunities.
+              </CardDescription>
+              <Link to="/academics">
+                <Button variant="ghost" className="text-blue-600 hover:text-blue-700">
+                  Learn More →
+                </Button>
+              </Link>
+            </CardContent>
+          </Card>
+
+          <Card className="group hover:shadow-xl transition-all duration-300 border-0 shadow-lg bg-white/80 backdrop-blur-sm hover:bg-white/95">
+            <CardHeader className="text-center pb-2">
+              <div className="mx-auto w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mb-4 group-hover:bg-green-200 transition-colors">
+                <Users className="w-6 h-6 text-green-600" />
+              </div>
+              <CardTitle className="text-lg">Admissions</CardTitle>
+            </CardHeader>
+            <CardContent className="text-center">
+              <CardDescription className="mb-4">
+                Find information about courses, eligibility, and admission process.
+              </CardDescription>
+              <Link to="/admissions">
+                <Button variant="ghost" className="text-green-600 hover:text-green-700">
+                  Apply Now →
+                </Button>
+              </Link>
+            </CardContent>
+          </Card>
+
+          <Card className="group hover:shadow-xl transition-all duration-300 border-0 shadow-lg bg-white/80 backdrop-blur-sm hover:bg-white/95">
+            <CardHeader className="text-center pb-2">
+              <div className="mx-auto w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mb-4 group-hover:bg-purple-200 transition-colors">
+                <Calendar className="w-6 h-6 text-purple-600" />
+              </div>
+              <CardTitle className="text-lg">Events</CardTitle>
+            </CardHeader>
+            <CardContent className="text-center">
+              <CardDescription className="mb-4">
+                Stay updated with latest news, events, and announcements.
+              </CardDescription>
+              <Link to="/announcements">
+                <Button variant="ghost" className="text-purple-600 hover:text-purple-700">
+                  View Events →
+                </Button>
+              </Link>
+            </CardContent>
+          </Card>
+
+          <Card className="group hover:shadow-xl transition-all duration-300 border-0 shadow-lg bg-white/80 backdrop-blur-sm hover:bg-white/95">
+            <CardHeader className="text-center pb-2">
+              <div className="mx-auto w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mb-4 group-hover:bg-orange-200 transition-colors">
+                <Phone className="w-6 h-6 text-orange-600" />
+              </div>
+              <CardTitle className="text-lg">Contact</CardTitle>
+            </CardHeader>
+            <CardContent className="text-center">
+              <CardDescription className="mb-4">
+                Get in touch with us for any queries or assistance.
+              </CardDescription>
+              <Link to="/contact">
+                <Button variant="ghost" className="text-orange-600 hover:text-orange-700">
+                  Contact Us →
+                </Button>
+              </Link>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* Sitemap Highlight */}
+        <Card className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white border-0 shadow-xl">
+          <CardContent className="text-center py-8">
+            <h2 className="text-2xl font-bold mb-4">
+              Need to find something specific?
+            </h2>
+            <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
+              Our comprehensive sitemap provides an organized view of all pages and sections on our website, making it easy to navigate and find exactly what you're looking for.
+            </p>
+            <Link to="/sitemap">
+              <Button variant="secondary" size="lg" className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
+                View Complete Sitemap
+                <ChevronRight className="ml-2 w-5 h-5" />
+              </Button>
+            </Link>
+          </CardContent>
+        </Card>
       </div>
     </div>
   );
